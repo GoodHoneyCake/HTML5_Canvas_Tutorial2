@@ -30,8 +30,8 @@ export class Wave {
     ctx.beginPath();
     ctx.fillStyle = "#34b7eb";
 
-    let prevX = this.points[0].x;
-    let prevY = this.points[0].y;
+    let prevX = this.points[0].prevX;
+    let prevY = this.points[0].prevY;
 
     ctx.moveTo(prevX, prevY);
 

@@ -30,8 +30,8 @@ export class Wave {
     ctx.beginPath();
     ctx.fillStyle = "#34b7eb";
 
-    let prevX = this.points[0].x;
-    let prevY = this.points[0].y;
+    let prevX = this.points[0].prevX;
+    let prevY = this.points[0].prevY;
 
     ctx.moveTo(prevX, prevY);
 
@@ -42,7 +42,7 @@ export class Wave {
       const cx = (prevX + this.points[i].x) / 2;
       const cy = (prevY + this.points[i].y) / 2;
 
-      ctx.quadraticCurveTo(prevX, prevY, cx, cy);
+      ctx.quadraticCurveTo(cx, cy);
 
       prevX = this.points[i].x;
       prevY = this.points[i].y;

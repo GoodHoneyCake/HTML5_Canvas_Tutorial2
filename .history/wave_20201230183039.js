@@ -43,6 +43,7 @@ export class Wave {
       const cy = (prevY + this.points[i].y) / 2;
 
       ctx.quadraticCurveTo(prevX, prevY, cx, cy);
+      ctx.quadraticCurveTo(prevX, prevY, cx, cy);
 
       prevX = this.points[i].x;
       prevY = this.points[i].y;
