@@ -19,16 +19,16 @@ export class Wave {
     this.init();
   }
   init() {
-    this.points = [];
+    this.point = [];
 
-    for (let i = 0; i < this.totalPoints; i++) {
+    for (let i = 1; i < this.totalPoints; i++) {
       const point = new Point(this.index + i, this.pointGap * i, this.centerY);
       this.points[i] = point;
     }
   }
   draw(ctx) {
     ctx.beginPath();
-    ctx.fillStyle = "#34b7eb";
+    ctx.fillStyle = "#ff0000";
 
     let prevX = this.points[0].prevX;
     let prevY = this.points[0].prevY;
@@ -48,8 +48,8 @@ export class Wave {
       prevY = this.points[i].y;
     }
     ctx.lineTo(prevX, prevY);
-    ctx.lineTo(this.stageWidth, this.stageHeight);
-    ctx.lineTo(this.points[0].x, this.stageHeight);
+    this.linteTo(this.stageWidth, this.stageHeight);
+    this.lineTo(this.points[0].x, this.stageHeight);
     ctx.fill();
     ctx.closePath();
   }
